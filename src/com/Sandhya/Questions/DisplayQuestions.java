@@ -11,7 +11,6 @@ public class DisplayQuestions {
 	static int res=0;
 	public static void Easy_Questions(int n) {
 		List<Question> easy=QuestionPrep.easy;
-		Scanner sc=new Scanner(System.in);
 		for(Question q: easy) {
 			System.out.println(q.getId()+". "+q.getQuestion());
 			System.out.println(q.getOpt1());
@@ -32,6 +31,7 @@ public class DisplayQuestions {
 				}
 			}
 		}
+		if(n==1)
 		System.out.println("Your Total Score is "+DisplayQuestions.res +" out of "+easy.size()*2);
 		
 		
@@ -45,9 +45,22 @@ public class DisplayQuestions {
 			System.out.println(q.getOpt2());
 			System.out.println(q.getOpt3());
 			System.out.println(q.getOpt4());
-			System.out.println();	
-			
+			System.out.println();
+			if(n==0) {
+				continue;
+			}
+			if(n==1) {
+				int returnedValue=ResultCaluculation.Result(q, DisplayQuestions.res);
+				if(returnedValue==0) {
+					  continue;
+				}
+				else {
+					DisplayQuestions.res=returnedValue;
+				}
+			}
 		}
+		if(n==1)
+		System.out.println("Your Total Score is "+DisplayQuestions.res +" out of "+medium.size()*2);
 		
 	}
 	
@@ -61,9 +74,23 @@ public class DisplayQuestions {
 			System.out.println(q.getOpt3());
 			System.out.println(q.getOpt4());
 			System.out.println();
+			if(n==0) {
+				continue;
+			}
+			if(n==1) {
+				int returnedValue=ResultCaluculation.Result(q, DisplayQuestions.res);
+				if(returnedValue==0) {
+					  continue;
+				}
+				else {
+					DisplayQuestions.res=returnedValue;
+				}
+			}
+		}
+		if(n==1)
+		System.out.println("Your Total Score is "+DisplayQuestions.res +" out of "+hard.size()*2);
+		
 		}	
 		
-	}
-	
- 
 }
+	
