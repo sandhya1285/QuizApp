@@ -21,22 +21,19 @@ public class Main {
         // set timer
     	QuizService service=new QuizService();
         Scanner sc=new Scanner(System.in);
-//        System.out.println("Hello !! Welcome to the quiz application. Please select the options based on your role\n"+
-//                              "1. Trainer\n"+
-//                              "2. Player\n"
-//                           );
-//        String role=sc.next();
-//        if(role.equalsIgnoreCase("Trainer")) {
-//        	System.out.println("Please enter your name and password to access the Quiz App");
-//        	String name = sc.next();
-//        	String password = sc.next();
-//        	if(name.equals("Sandhya")) {
+        System.out.println("Hello !! Welcome to the quiz application. Please select the options based on your role\n"+
+                             "1. Trainer\n"+
+                             "2. Player\n");
+        int role=sc.nextInt();
+        if(role==1) {
+        	System.out.println("Please enter your name and password to access the Quiz App");
+        	String name = sc.next();
+        	String password = sc.next();
             service.trainerMethod();
-        	//}
-        	
-        //}
-        
-
+        }
+        else {
+        	service.playerMethod();
+        }
 
     }
 }

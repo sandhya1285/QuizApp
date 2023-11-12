@@ -7,11 +7,28 @@ import com.Sandhya.Questions.QuestionPrep;
 
 public class QuizService{
 	public void playerMethod() {
+	  while(true) {
 		System.out.println("Please select the level of questions on which you want to play the quiz\n"+
 		                    "1.Easy\n"+
 				            "2.Medium\n"+
 		                    "3.Hard\n");
-		
+		Scanner sc=new Scanner(System.in);
+		int level=sc.nextInt();
+		if(level==1) {
+			DisplayQuestions.Easy_Questions(1);
+		}
+		else if(level==2) {
+			DisplayQuestions.Medium_Questions(1);
+		}
+		else {
+			DisplayQuestions.Hard_Questions(1);
+		}
+		System.out.println("Do you want to play again? Y / N");
+		String choice=sc.next();
+		if(choice.equalsIgnoreCase("N")) {
+			break;
+		}
+	  }
 	}
 	
 	 public void trainerMethod() {
@@ -135,13 +152,13 @@ public class QuizService{
 		}
 		else {
 			if(level==1) {
-				DisplayQuestions.Easy_Questions();
+				DisplayQuestions.Easy_Questions(0);
 			}
 			else if(level==2) {
-				DisplayQuestions.Medium_Questions();
+				DisplayQuestions.Medium_Questions(0);
 			}
 			else {
-				DisplayQuestions.Hard_Questions();
+				DisplayQuestions.Hard_Questions(0);
 			}
 		}
 		System.out.println("Do you want to continue the operations? Y or N");
