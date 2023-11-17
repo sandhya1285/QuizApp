@@ -39,6 +39,7 @@ public class DisplayQuestions {
 	//Displaying medium questions when selected create operation
 	public static void Medium_Questions(int n) {
 		List<Question> medium=QuestionPrep.medium;
+		Scanner sc=new Scanner(System.in);
 		for(Question q: medium) {
 			System.out.println(q.getId()+". "+q.getQuestion());
 			System.out.println(q.getOpt1());
